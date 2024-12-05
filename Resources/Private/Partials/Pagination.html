@@ -1,0 +1,21 @@
+<f:comment><![CDATA[
+packages/ml_stonelexicon/Resources/Private/Partials/Pagination.html
+]]></f:comment>
+
+<f:if condition="{totalPages} > 1">
+    <ul class="pagination">
+        <!-- zurück link -->
+        <f:if condition="{currentPage > 1}">
+            <li class="page-item">
+                <f:link.action action="list" arguments="{page: currentPage - 1, searchColor: searchColor}">&laquo; zurück</f:link.action>
+            </li>
+        </f:if>
+
+        <!-- weiter link -->
+        <f:if condition="{currentPage < totalPages}">
+            <li class="page-item">
+                <f:link.action action="list" arguments="{page: currentPage + 1, searchColor: searchColor}">weiter &raquo;</f:link.action>
+            </li>
+        </f:if>
+    </ul>
+</f:if>

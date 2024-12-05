@@ -1,0 +1,221 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:comment><![CDATA[
+	packages/ml_stonelexicon/Resources/Private/Templates/Stone.html
+]]></f:comment>
+
+
+<f:layout name="Default" />
+
+<f:section name="Main">
+	<div class="frame frame-size-default frame-ruler-before frame-type-text frame-layout-default frame-background-none frame-no-backgroundimage frame-space-before-none frame-space-after-none">
+		<div class="frame-group-container">
+			<div class="frame-group-inner">
+				<div class="frame-container frame-container-default">
+					<div class="frame-inner">
+						<header class="frame-header">
+							<h1 class="element-header"><span>{data.title}</span></h1>
+							<h4 class="element-subheader"><span>{data.subtitle}</span></h4>
+						</header>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section section-default">
+		<div class="container">
+			<div class="frame-container">
+				<div class="section-row">
+					<div class="section-column col">
+						<h4><f:translate key="rocktype" extensionName="ml_stonelexicon" /></h4>
+						<p>{data.rocktype}</p>
+					</div>
+					<div class="section-column col">
+						<h4><f:translate key="subgroup" extensionName="ml_stonelexicon" /></h4>
+						<p>{data.subgroup}</p>
+					</div>
+					<div class="section-column col">
+						<h4><f:translate key="origin" extensionName="ml_stonelexicon" /></h4>
+						<p>{data.origin}</p>
+					</div>
+					<div class="section-column col">
+						<h4><f:translate key="age" extensionName="ml_stonelexicon" /></h4>
+						<p>ca. {data.age} Mio. Jahre</p>
+					</div>
+					<div class="section-column col">
+						<h4><f:translate key="color" extensionName="ml_stonelexicon" /></h4>
+						<p><f:translate key="color.{data.color}" extensionName="ml_stonelexicon" /></p>
+					</div>
+					<div class="section-column col">
+						<h4><f:translate key="structure" extensionName="ml_stonelexicon" /></h4>
+						<p><f:translate key="structure.{data.structure}" extensionName="ml_stonelexicon" /></p>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '51', slide: '{theme.pagelayout.{pagelayout}.colPos.51.slide}'}" />
+			<f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '52', slide: '{theme.pagelayout.{pagelayout}.colPos.52.slide}'}" />
+			<f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '3', slide: '{theme.pagelayout.{pagelayout}.colPos.3.slide}'}" />
+			<f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '5', slide: '{theme.pagelayout.{pagelayout}.colPos.5.slide}'}" />
+
+			<header class="frame-header">
+				<h4 class="element-header"><span>Anwendungsbereiche</span></h4>
+			</header>
+
+			<div class="section-row">
+
+				<f:if condition="{data.indoordry_1} == 0 || {data.indoordry_2} == 0 || {data.indoordry_3} == 0 || {data.indoordry_4} == 0 || {data.indoordry_5} == 0">
+					<div class="section-column section-column-third">
+						<div class="frame-group-container">
+							<div class="frame-inner">
+								<ul class="list-group">
+
+									<li class="list-group-item">
+										<h5><f:translate key="indoordry" extensionName="ml_stonelexicon" /></h5>
+									</li>
+
+									<f:if condition="{data.indoordry_1} == 0">
+										<li class="list-group-item list-group-item-action">
+											<f:translate key="indoordry.1" extensionName="ml_stonelexicon" />
+										</li>
+									</f:if>
+
+									<f:if condition="{data.indoordry_2} == 0">
+										<li class="list-group-item list-group-item-action">
+											<f:translate key="indoordry.2" extensionName="ml_stonelexicon" />
+										</li>
+									</f:if>
+
+									<f:if condition="{data.indoordry_3} == 0">
+										<li class="list-group-item list-group-item-action">
+											<f:translate key="indoordry.3" extensionName="ml_stonelexicon" />
+										</li>
+									</f:if>
+
+									<f:if condition="{data.indoordry_4} == 0">
+										<li class="list-group-item list-group-item-action">
+											<f:translate key="indoordry.4" extensionName="ml_stonelexicon" />
+										</li>
+									</f:if>
+
+									<f:if condition="{data.indoordry_5} == 0">
+										<li class="list-group-item list-group-item-action">
+											<f:translate key="indoordry.5" extensionName="ml_stonelexicon" />
+										</li>
+									</f:if>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</f:if>
+
+				<f:if condition="{data.indoorwet_1} == 0 || {data.indoorwet_2} == 0 || {data.indoorwet_3} == 0">
+					<div class="section-column section-column-third">
+						<div class="frame-group-container">
+							<div class="frame-inner">
+								<ul class="list-group">
+
+									<li class="list-group-item">
+										<h5><f:translate key="indoorwet" extensionName="ml_stonelexicon" /></h5>
+									</li>
+
+									<f:if condition="{data.indoorwet_1} == 0">
+										<li class="list-group-item list-group-item-action">
+											<f:translate key="indoorwet.1" extensionName="ml_stonelexicon" />
+										</li>
+									</f:if>
+
+									<f:if condition="{data.indoorwet_2} == 0">
+										<li class="list-group-item list-group-item-action">
+											<f:translate key="indoorwet.2" extensionName="ml_stonelexicon" />
+										</li>
+									</f:if>
+
+									<f:if condition="{data.indoorwet_3} == 0">
+										<li class="list-group-item list-group-item-action">
+											<f:translate key="indoorwet.3" extensionName="ml_stonelexicon" />
+										</li>
+									</f:if>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</f:if>
+
+				<f:if condition="{data.outdoor_1} == 0 || {data.outdoor_2} == 0 || {data.outdoor_3} == 0">
+					<div class="section-column section-column-third">
+						<div class="frame-group-container">
+							<div class="frame-inner">
+								<ul class="list-group">
+
+									<li class="list-group-item">
+										<h5><f:translate key="outdoor" extensionName="ml_stonelexicon" /></h5>
+									</li>
+
+									<f:if condition="{data.outdoor_1} == 0">
+										<li class="list-group-item list-group-item-action">
+											<f:translate key="outdoor.1" extensionName="ml_stonelexicon" />
+										</li>
+									</f:if>
+
+									<f:if condition="{data.outdoor_2} == 0">
+										<li class="list-group-item list-group-item-action">
+											<f:translate key="outdoor.2" extensionName="ml_stonelexicon" />
+										</li>
+									</f:if>
+
+									<f:if condition="{data.outdoor_3} == 0">
+										<li class="list-group-item list-group-item-action">
+											<f:translate key="outdoor.3" extensionName="ml_stonelexicon" />
+										</li>
+									</f:if>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</f:if>
+
+			</div>
+
+			<div class="frame frame-default frame-type-header frame-layout-0 frame-background-none frame-no-backgroundimage frame-space-before-none frame-space-after-none">
+				<div class="frame-group-container">
+					<div class="frame-group-inner">
+						<div class="frame-container frame-container-default">
+							<div class="frame-inner">
+								<p>Die individuelle Eignung des ausgesuchten Steins für Ihr Projekt sollte in einer persönlichen
+									Beratung besprochen werden. Unser MAGNA Beratungsservice steht Ihnen gerne zur Verfügung.</p>
+
+								<div class="texticon texticon-left">
+									<div class="texticon-icon texticon-size-default texticon-type-default"><span
+											class="texticon-inner-icon">
+											<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="32" height="32"
+												viewBox="0 0 32 32" class="">
+												<path
+													d="M16 1c2 0 4 .4 5.8 1.2 1.9.8 3.5 1.8 4.8 3.2 1.3 1.3 2.4 2.9 3.2 4.8C30.6 12 31 14 31 16s-.4 4-1.2 5.8c-.8 1.9-1.9 3.4-3.2 4.8s-2.9 2.4-4.8 3.2C20 30.6 18 31 16 31s-4-.4-5.8-1.2-3.5-1.8-4.8-3.2-2.4-2.9-3.2-4.8C1.4 20 1 18 1 16s.4-4 1.2-5.8S4 6.7 5.4 5.4 8.3 3 10.2 2.2 14 1 16 1zm8.1 14.2L17 9.4c-.3-.2-.5-.3-.7-.2s-.3.3-.3.6v3.6H8.9c-.2 0-.3.1-.5.2s-.2.3-.2.5V18c0 .2.1.3.2.5s.3.2.5.2H16v3.6c0 .4.1.6.3.7.2.1.4 0 .7-.2l7.1-5.8c.3-.2.4-.5.4-.8.1-.5-.1-.8-.4-1z">
+												</path>
+											</svg>
+										</span>
+									</div>
+									<div class="texticon-content">
+										<p><a href="https://magnastein.net/service#c3823" rel="noopener" title="Beratungsservice">Beratungsservice</a></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '0', slide: '{theme.pagelayout.{pagelayout}.colPos.0.slide}'}" />
+
+			<div class="frame frame-default frame-type-header frame-layout-0 frame-background-none frame-no-backgroundimage frame-space-before-none frame-space-after-none">
+				<f:link.page pageUid="{data.pid}" class="back btn btn-outline-primary" title="zurück zur Übersicht {breadcrumb.3.title}" data-load="lazy">&laquo; Übersicht {breadcrumb.3.title}</f:link.page>
+			</div>
+
+		</div>
+	</div>
+</f:section>
+</html>

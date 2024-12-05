@@ -1,0 +1,25 @@
+<f:comment><![CDATA[
+	packages/ml_stonelexicon/Resources/Private/Partials/Images.html
+	Bilder Rendering der Listenansicht für das Lexikon
+]]></f:comment>
+
+<f:for each="{images}" as="image" iteration="imagesIteration">
+	<f:if condition="{imagesIteration.cycle} == 1">
+        <f:then>
+				<picture>
+					<source data-variant="default"	data-maxwidth="418" media="(min-width: 1400px)" 	srcset="{f:uri.image(src:image.properties.uid,treatIdAsReference:1,maxWidth:418)}">
+					<source data-variant="xlarge" 	data-maxwidth="358" media="(min-width: 1200px)" 	srcset="{f:uri.image(src:image.properties.uid,treatIdAsReference:1,maxWidth:358)}">
+					<source data-variant="large"	data-maxwidth="298" media="(min-width: 992px)" 		srcset="{f:uri.image(src:image.properties.uid,treatIdAsReference:1,maxWidth:298)}">
+					<source data-variant="medium"	data-maxwidth="218" media="(min-width: 768px)" 		srcset="{f:uri.image(src:image.properties.uid,treatIdAsReference:1,maxWidth:218)}">
+					<source data-variant="small"	data-maxwidth="498" media="(min-width: 576px)" 		srcset="{f:uri.image(src:image.properties.uid,treatIdAsReference:1,maxWidth:498)}">
+					<source data-variant="extrasmall" data-maxwidth="372" 								srcset="{f:uri.image(src:image.properties.uid,treatIdAsReference:1,maxWidth:327)}">
+					<img src="{f:uri.image(src:image.properties.uid,treatIdAsReference:1)}"
+							class =	"image-embed-item"
+							title="{image.properties.title}"
+							alt="{image.properties.alternative}"
+							height=	"235"
+							loading= lazy />
+				</picture>
+		</f:then>
+	</f:if>
+</f:for>

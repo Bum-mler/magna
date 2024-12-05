@@ -1,0 +1,109 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:simplesigns="http://typo3.org/ns/Simplesigns/MlStonelexicon/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:comment><![CDATA[
+    Template: List.html
+    Dieses Template zeigt die Liste der Steine basierend auf den ausgewählten Filtern und der aktuellen Seite.
+]]></f:comment>
+
+<f:layout name="Stone" />
+
+<f:section name="Main">
+    <header class="frame-header">
+        <h1 class="element-header">
+            {pageTitle}
+            <span class="badge bg-primary">
+               {totalStones} Steine gefunden
+            </span>
+        </h1>
+    </header>
+
+    <!-- Ladeanimation -->
+    <div id="loadingSpinner" style="display: none;">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>    
+
+    <!-- Rendern des Suchformulars -->
+    <f:render partial="SearchForm" section="SearchForm" arguments="{pid: pid, stones: stones, allOrigins: allOrigins, origin: origin, allColors: allColors, searchColor: searchColor, search: search}" />
+
+    <f:if condition="{searchColor}">
+        <p>Aktueller Farbfilter: <strong>{searchColor}</strong></p>
+    </f:if>
+    <f:if condition="{searchOrigin}">
+        <p>Aktueller Abbauort: <strong>{searchOrigin}</strong></p>
+    </f:if>
+    
+    <!-- Flash-Nachrichten anzeigen (falls vorhanden) -->
+    <f:flashMessages />
+    <input type="hidden" name="tx_mlstonelexicon_lexicon[searchOrigin]" value="{searchOrigin}" />
+
+    <!-- Container für die Steine-Liste -->
+    <div id="stoneContainer">
+        <f:if condition="{stones}">
+            <f:then>
+                <div class="card-menu card-menu-align-left card-menu-columns-4">
+                    <f:for each="{stones}" as="stone">
+                        <div class="card-menu-item">
+                            <div class="card">
+                                <!-- Bild des Steins -->
+                                <div class="card-img-top">
+                                    <f:link.page pageUid="{stone.uid}">
+                                        <f:cObject typoscriptObjectPath="lib.lexiconThumbnails" data="{uid: stone.uid}" />
+                                    </f:link.page>
+                                </div>
+                                <!-- Beschreibung des Steins -->
+                                <div class="card-body">
+                                    <f:link.page pageUid="{stone.uid}">
+                                        <h3 class="card-title">{stone.title}</h3>
+                                    </f:link.page>
+                                    <f:if condition="{stone.subtitle}">
+                                        <h4 class="card-subtitle">{stone.subtitle}</h4>
+                                    </f:if>
+                                    <p>{stone.rocktype}</p>
+                                    <p>{stone.subgroup}</p>
+                                </div>
+                                <!-- Link zum Weiterlesen -->
+                                <div class="card-footer">
+                                    <f:link.page pageUid="{stone.uid}">
+                                        <span class="btn-text">weiterlesen</span>
+                                    </f:link.page>
+                                </div>
+                            </div>
+                        </div>
+                    </f:for>
+                </div>
+            </f:then>
+            <f:else>
+                <!-- Fehlermeldung -->
+                <p>Keine Steine gefunden. Bitte ändern Sie die Filterkriterien.</p>
+            </f:else>
+        </f:if>
+    </div>
+
+    <!-- Paginierung, falls die Anzahl der Steine die Anzahl pro Seite übersteigt -->
+    <f:if condition="{totalStones} > {itemsPerPage}">
+        <nav aria-label="Page navigation justify-content-center">
+            <f:format.raw>{simplesigns:pagination(currentPage: currentPage, totalPages: totalPages, itemsPerPage: itemsPerPage, totalStones: totalStones, action: 'list', controller: 'Stone', additionalParams: {searchString: searchString, searchColor: searchColor, searchOrigin: searchOrigin})}</f:format.raw>
+        </nav>
+    </f:if>
+
+    <!-- Link zurück zur Übersicht -->
+    <div class="frame frame-default frame-type-header frame-layout-0 frame-background-none frame-no-backgroundimage frame-space-before-none frame-space-after-none">
+        <f:link.page pageUid="38" class="back btn btn-outline-primary" title="zurück zur Übersicht Lexikon"> &laquo; Übersicht Lexikon</f:link.page>
+    </div>
+
+    <f:debug title="Pagination Data">
+        currentPage: {currentPage}, totalPages: {totalPages}, totalStones: {totalStones}, itemsPerPage: {itemsPerPage}, additionalParams="{searchColor: searchColor, searchOrigin: searchOrigin }
+    </f:debug>
+
+    <!-- cHash hinzufügen -->
+    <f:form.hidden name="cHash" value="{f:format.raw(value: cHash)}" />
+    <f:form.hidden name="cHash" value="{cHash}" />
+
+    <input type="hidden" name="cHash" value="{cHash}" />
+
+</f:section>
+</html>

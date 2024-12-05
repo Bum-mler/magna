@@ -1,0 +1,3 @@
+- route: '/mlstonelexicon/api/calculate-chash'
+  controller: 'Simplesigns\MlStonelexicon\Controller\ApiController::calculateCHashAction'
+  methods: ['GET']

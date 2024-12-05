@@ -1,0 +1,18 @@
+// packages/ml_stonelexicon/Configuration/TypoScript/constants.typoscript
+
+page {
+    fluidtemplate {
+        layoutRootPath = EXT:ml_stonelexicon/Resources/Private/Layouts/
+        partialRootPath = EXT:ml_stonelexicon/Resources/Private/Partials/
+        templateRootPath = EXT:ml_stonelexicon/Resources/Private/Templates/
+    }
+}
+plugin.tx_mlstonelexicon {
+    extensionName = MlStonelexicon
+    pluginName = Lexicon
+    controller = Lexicon
+    action = list
+    persistence {
+        storagePid = 303,304,305,306,307,308
+    }
+}

@@ -1,0 +1,8 @@
+// PageTS für das Lexikon
+@import 'EXT:ml_stonelexicon/Configuration/TsConfig/Page/Mod/WebLayout/BackendLayouts/*.tsconfig'
+
+// Erlaubt neue Tabellen in der Listenansicht:
+mod.web_list {
+    allowedNewTables = pages, tt_content
+}
+

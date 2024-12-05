@@ -1,0 +1,2 @@
+// der neue Seitentyp wird im Assistenten angezeigt
+options.pageTree.doktypesToShowInNewPageDragArea := addToList(169)

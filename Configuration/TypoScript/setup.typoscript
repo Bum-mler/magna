@@ -1,0 +1,154 @@
+// packages/ml_stonelexicon/Configuration/TypoScript/setup.typoscript
+
+// zusätzliche Parameter wie Filtervariablen
+config.linkVars = L, tx_mlstonelexicon_lexicon|searchOrigin, tx_mlstonelexicon_lexicon|searchColor
+config.linkVars.debug = 1
+config.cHashIncludePageId = 1
+
+plugin.tx_mlstonelexicon = USER
+plugin.tx_mlstonelexicon {
+    userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+    extensionName = {$plugin.tx_mlstonelexicon.extensionName}  # Verweis auf die Constants
+    pluginName = {$plugin.tx_mlstonelexicon.pluginName}        # Verweis auf die Constants
+    controller = {$plugin.tx_mlstonelexicon.controller}        # Verweis auf die Constants
+    action = {$plugin.tx_mlstonelexicon.action}                # Verweis auf die Constants
+    settings {
+        itemsPerPage = 12
+    }
+}
+
+plugin.tx_mlstonelexicon {
+  persistence {
+    storagePid = {$plugin.tx_mlstonelexicon.persistence.storagePid}
+  }
+  features {
+    requireCHashArgumentForActionArguments = 1
+  }
+}
+
+config.cache.hash {
+    excludedParameters = L, id, cHash
+    additionalGetParameters {
+        tx_mlstonelexicon_lexicon = searchColor, searchOrigin, searchString, page
+    }
+}
+
+// Diese Einstellung bewirkt, dass Extbase-Standardargumente wie action, controller, extensionName, pluginName usw. nicht aus der URL entfernt werden, auch wenn sie ihren Standardwerten entsprechen.
+// Standardwert 0: Alle Standardargumente werden in der URL belassen und somit auch in die cHash-Berechnung einbezogen.
+// Standardwert 1: Standardargumente werden aus der URL entfernt, was die URL kürzer macht, aber möglicherweise zu Problemen mit der cHash-Berechnung führen kann.
+config.tx_extbase.features {
+    skipDefaultArguments = 0
+}
+
+myAjax = PAGE
+myAjax {
+   typeNum = 1617455214
+   config {
+      disableAllHeaderCode = 1
+      admPanel = 0
+      debug = 0
+      no_cache = 1
+      additionalHeaders {
+         10 {
+            header = Content-Type: application/json
+            replace = 1
+         }
+      }
+   }
+   10 = USER
+   10 {
+      userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+      extensionName = MlStonelexicon
+      pluginName = Lexicon
+      controller = Stone
+      action = list
+   }
+}
+
+
+// Laden von CSS und JavaScript auf der Root-Seite mit der ID=38
+[38 in tree.rootLineIds]
+page {
+  includeCSS {
+    lexikon = EXT:ml_stonelexicon/Resources/Public/Scss/lexikon.scss
+  }
+  includeJSLibs {
+   // jquery = https://code.jquery.com/jquery-3.7.1.min.js
+   // jquery.external = 1
+   // jquery.integrity = sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=
+   // jquery.crossorigin = anonymous
+  }
+  includeJSFooter {
+    lexikon = EXT:ml_stonelexicon/Resources/Public/JavaScript/Dist/lexikon.js
+  }
+}
+[global]
+
+// Fluid-Bild Lexikon in der Listenansicht für das FE
+lib.lexiconThumbnails = FLUIDTEMPLATE
+lib.lexiconThumbnails {
+  file = EXT:ml_stonelexicon/Resources/Private/Partials/Images.html
+  dataProcessing {
+    10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+    10 {
+      references {
+        table = pages
+        fieldName = thumbnail
+      }
+      as = images
+    }
+  }
+}
+
+
+plugin.tx_mlstonelexicon {
+    settings {
+        itemsPerPage = 12
+    }
+
+    persistence {
+        # Hier die PID definieren, die Ihre Seiteninhalte enthält.
+        storagePid = 169
+    }
+
+    view {
+        # Pfade zu den Templates, Partials und Layouts
+        templateRootPaths.0 = EXT:ml_stonelexicon/Resources/Private/Templates/
+        partialRootPaths.0 = EXT:ml_stonelexicon/Resources/Private/Partials/
+        layoutRootPaths.0 = EXT:ml_stonelexicon/Resources/Private/Layouts/
+    }
+
+    features {
+        skipDefaultArguments = 1
+    }
+
+    mvc {
+        callDefaultActionIfActionCantBeResolved = 1
+    }
+}
+config.tx_extbase {
+    objects {
+        Simplesigns\MlStonelexicon\Controller\StoneController {
+            className = Simplesigns\MlStonelexicon\Controller\StoneController
+        }
+    }
+}
+
+config.cache {
+    cacheHash {
+        excludedParameters {
+            1 = tx_mlstonelexicon_lexicon[action]
+            2 = tx_mlstonelexicon_lexicon[controller]
+            3 = tx_mlstonelexicon_lexicon[searchColor]
+            4 = tx_mlstonelexicon_lexicon[searchOrigin]
+        }
+    }
+}
+
+config.tx_extbase {
+    objects {
+        Simplesigns\MlStonelexicon\Controller\ApiController {
+            className = Simplesigns\MlStonelexicon\Controller\ApiController
+        }
+    }
+}

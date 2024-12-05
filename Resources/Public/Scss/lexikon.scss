@@ -1,0 +1,96 @@
+// Farbbutton Lexikon 
+// ------------------------------------------------------
+
+$colors: (
+  1: #000000,
+  5: #008000,
+  2: #8B4513,
+  3: #FF0000,
+  4: #0000FF,
+  6: #FF69B4,
+  7: #e9e2d7,
+  8: #FFFF00,
+  9: #808080,
+  10: #FFFFFF,
+);
+
+.btn-lexikon {
+  &.btn-sm {
+    @each $number, $color in $colors {
+      &.lexikon-#{$number} {
+        background-color: $color;
+        color: if(lightness($color) > 70, #333, #fff); // Textfarbe basierend auf der Helligkeit des Hintergrunds
+        border: if($number ==10, 1px solid #808080, none); // Rahmen nur für Button 10 im Normalzustand
+        transition: border-color 0.3s ease-in-out;
+        margin: if($number ==10, 4px, 5px); // 1px weniger Margin für Button mit der NNummer 10 oder letzter Button
+
+        &:hover {
+          background-color: darken($color, if($number ==10, 5%, 10%));
+          border-color: if($number ==10, darken($color, 10%), none); // Rahmen nur für Button 10 beim Hover
+        }
+
+        &.active {
+          background-color: #ffcc00;
+        }
+      }
+    }
+
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+}
+
+
+// gezählte Steine am Gruppenamen H1 als Badge
+// ------------------------------------------------------
+
+// .bg-primary {
+//   --bs-bg-opacity: 0.50;
+//   background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
+// }
+
+.badge {
+  font-weight: 300 !important;
+  --bs-badge-padding-x: 0.5em !important;
+  --bs-badge-padding-y: 0.2em !important;
+}
+
+
+// Einzelansicht Lücke zwischen den Containern schließen
+// ------------------------------------------------------
+.section-container {
+  display: flex;
+}
+
+.section-column {
+  flex: 1;
+}
+
+
+// Paginierungs-SCSS
+// ------------------------------------------------------
+$pagination-margin-top: 1rem; // Abstand oben
+$pagination-margin-bottom: 1rem; // Abstand unten
+.pagination {
+  margin-top: $pagination-margin-top;
+  margin-bottom: $pagination-margin-bottom;
+
+  .page-item {
+    margin: 5px 5px;
+  }
+}
+
+// Ladeanimation-SCSS Spinner
+// ------------------------------------------------------
+#loadingSpinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999; // Damit der Spinner über anderen Inhalten liegt
+  
+  .spinner-border {
+    width: 3rem;
+    height: 3rem;
+  }
+}

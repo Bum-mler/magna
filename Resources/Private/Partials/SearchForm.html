@@ -1,0 +1,58 @@
+<f:comment><![CDATA[
+    packages/ml_stonelexicon/Resources/Private/Partials/SearchForm.html
+]]></f:comment>
+
+{namespace ml=Simplesigns\MlStonelexicon\ViewHelpers}
+
+<f:cache.disable>
+    <f:section name="SearchForm">
+        <div class="row">
+            <!-- Farbfilter -->
+            <div class="form-group col-md-8">
+                <f:for each="{allColors}" as="color">
+                    <a href="{f:uri.action(action: 'list', arguments: {searchColor: color})}" 
+                       class="btn-lexikon btn-sm lexikon-{color} filter-button">
+                        {f:translate(key: 'color.{color}', extensionName: 'ml_stonelexicon')}
+                    </a>
+                </f:for>
+
+                <a href="{f:uri.action(action: 'list', controller: 'Stone', arguments: {searchColor: ''})}" 
+                id="resetFilterButton" 
+                class="btn btn-outline-secondary">
+                Filter zurücksetzen
+                </a>
+
+            </div>
+
+            <div id="flashMessageContainer" class="alert alert-info" style="display: none;"></div>
+
+
+            <!-- Abbauort Dropdown -->
+            <div class="form-group col-md-4">
+                <f:if condition="{allOrigins}">
+                    <select id="searchOrigin" class="form-control form-select">
+                        <option value="">-- Abbauort --</option>
+                        <f:for each="{allOrigins}" as="origin" key="key">
+                            <option value="{key}" <f:if condition="{key} == searchOrigin">selected="selected"</f:if>>
+                                {origin}
+                            </option>
+                        </f:for>
+                    </select>
+                </f:if>
+            </div>
+
+            <!-- Suchfeld -->
+            <div class="form-group col-md-2">
+                <div class="input-group">
+                    <input type="text" id="searchString" class="form-control search-query" placeholder="Suchbegriff eingeben" value="{search}" />
+                    <button type="button" class="btn btn-outline-primary search-button" aria-label="Suchen">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </f:section>
+</f:cache.disable>

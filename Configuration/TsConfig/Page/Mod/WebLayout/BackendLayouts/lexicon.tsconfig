@@ -1,0 +1,80 @@
+## BACKENDLAYOUT: Lexikon
+
+mod.web_layout.BackendLayouts {
+    stone {
+        title = LLL:EXT:ml_stonelexicon/Resources/Private/Language/locallang.xlf::backend_layout.lexicon
+        icon  = EXT:ml_stonelexicon/Resources/Public/Icons/BackendLayouts/lexicon_layout.svg
+        config {
+            backend_layout {                      
+                colCount = 12
+                rowCount = 6
+                rows {
+                    1 {
+                        columns {
+                            1 {
+                                name = Bilder für die Einzelansicht
+                                colPos = 51
+                                colspan = 12
+                            }
+                        }
+                    }
+                    2 {
+                        columns {
+                            1 {
+                                name = Gesteinskunde
+                                colPos = 52
+                                colspan = 12
+                            }
+                        }
+                    }
+                    3 {
+                        columns {
+                            1 {
+                                name = Geologische Entstehungsgeschichte
+                                colPos = 3
+                                colspan = 12
+                            }
+                        }
+                    }
+                    4 {
+                        columns {
+                            1 {
+                                name = Besonderheiten
+                                colPos = 5
+                                colspan = 12
+                            }
+                        }
+                    }
+                    5 {
+                        columns {
+                            1 {
+                                name = Links
+                                colPos = 0
+                                colspan = 12
+                            }
+                        }                            
+                    }
+                    6 {
+                        columns {
+                            1 {
+                                name = LLL:EXT:bootstrap_package/Resources/Private/Language/Backend.xlf:backend_layout.column.footer1
+                                colPos = 10
+                                colspan = 4
+                            }
+                            2 {
+                                name = LLL:EXT:bootstrap_package/Resources/Private/Language/Backend.xlf:backend_layout.column.footer2
+                                colPos = 11
+                                colspan = 4
+                            }
+                            3 {
+                                name = LLL:EXT:bootstrap_package/Resources/Private/Language/Backend.xlf:backend_layout.column.footer3
+                                colPos = 12
+                                colspan = 4
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}    

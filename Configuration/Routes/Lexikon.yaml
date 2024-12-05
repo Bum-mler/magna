@@ -1,0 +1,36 @@
+routeEnhancers:
+  StoneLexicon:
+    type: Extbase
+    limitToPages: [303, 304, 305, 306, 307, 308]
+    extension: MlStonelexicon
+    plugin: Lexicon
+    routes:
+      - routePath: '/{categorySlug}'
+        _controller: 'Stone::list'
+        _arguments:
+          categorySlug: searchOrigin
+      - routePath: '/{categorySlug}/page-{page}'
+        _controller: 'Stone::list'
+        _arguments:
+          categorySlug: searchOrigin
+          page: page
+      - routePath: '/api/calculate-chash'
+        _controller: 'Api::calculateChash'
+    defaultController: 'Stone::list'
+    aspects:
+      categorySlug:
+        type: PersistedAliasMapper
+        tableName: 'pages'
+        routeFieldName: 'slug'
+      page:
+        type: StaticRangeMapper
+        start: '1'
+        end: '100'
+  StoneLexiconAPI:
+    type: Extbase
+    extension: MlStonelexicon
+    plugin: LexiconAPI
+    routes:
+      - routePath: '/api/calculate-chash'
+        _controller: 'Api::calculateChash'
+    defaultController: 'Api::index'

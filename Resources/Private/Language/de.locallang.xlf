@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+   <file source-language="en" datatype="plaintext" target-language="de" original="EXT:ml_stonelexicon/Resources/Private/Language/locallang.xlf" date="2024-07-23T10:30:00Z" product-name="ml_stonelexicon">
+      <header/>
+      <body>
+
+         <!-- Stein Übersetzungen -->
+         <trans-unit id="tx_mlstonelexicon_domain_model_stone" resname="tx_mlstonelexicon_domain_model_stone">
+            <source>Stone</source>
+            <target>Stein</target>
+         </trans-unit>
+         <trans-unit id="title" resname="title">
+            <source>Title</source>
+            <target>Titel</target>
+         </trans-unit>
+         <trans-unit id="description" resname="description">
+            <source>Description</source>
+            <target>Beschreibung</target>
+         </trans-unit>
+         <trans-unit id="images" resname="images">
+            <source>Images</source>
+            <target>Bild</target>
+         </trans-unit>
+         <trans-unit id="tx_mlstonelexicon_domain_model_stone.rocktype" resname="tx_mlstonelexicon_domain_model_stone.rocktype">
+            <source>Rocktype</source>
+            <target>Gesteinsart</target>
+         </trans-unit>
+         <trans-unit id="tx_mlstonelexicon_domain_model_stone.subgroup" resname="tx_mlstonelexicon_domain_model_stone.subgroup">
+            <source>Subgroup</source>
+            <target>Untergruppe</target>
+         </trans-unit>
+         <trans-unit id="tx_mlstonelexicon_domain_model_stone.age" resname="tx_mlstonelexicon_domain_model_stone.age">
+            <source>Age</source>
+            <target>Alter</target>
+         </trans-unit>
+         <trans-unit id="tx_mlstonelexicon_domain_model_stone.origin" resname="tx_mlstonelexicon_domain_model_stone.origin">
+            <source>Origin</source>
+            <target>Abbauort</target>
+         </trans-unit>
+         <trans-unit id="tx_mlstonelexicon_domain_model_stone.color" resname="tx_mlstonelexicon_domain_model_stone.color">
+            <source>Color</source>
+            <target>Farbe</target>
+         </trans-unit>
+         <trans-unit id="tx_mlstonelexicon_domain_model_stone.structure" resname="tx_mlstonelexicon_domain_model_stone.structure">
+            <source>Structure</source>
+            <target>Struktur</target>
+         </trans-unit>
+
+         <!-- Kategorie Übersetzungen -->
+         <trans-unit id="tx_mlstonelexicon_domain_model_category" resname="tx_mlstonelexicon_domain_model_category">
+            <source>Category</source>
+            <target>Kategorie</target>
+         </trans-unit>
+         <trans-unit id="tx_mlstonelexicon_domain_model_category.title" resname="tx_mlstonelexicon_domain_model_category.title">
+            <source>Title</source>
+            <target>Titel</target>
+         </trans-unit>
+         <trans-unit id="tx_mlstonelexicon_domain_model_category.description" resname="tx_mlstonelexicon_domain_model_category.description">
+            <source>Description</source>
+            <target>Beschreibung</target>
+         </trans-unit>
+         <trans-unit id="tx_mlstonelexicon_domain_model_category.image" resname="tx_mlstonelexicon_domain_model_category.image">
+            <source>Image</source>
+            <target>Bild</target>
+         </trans-unit>
+         <trans-unit id="tx_mlstonelexicon_domain_model_category.stones" resname="tx_mlstonelexicon_domain_model_category.stones">
+            <source>Stones</source>
+            <target>Steine</target>
+         </trans-unit>
+
+         <!-- FlexForm Übersetzungen -->
+         <trans-unit id="settings.itemsPerPage" resname="settings.itemsPerPage">
+            <source>Paginierung Items per Page</source>
+            <target>Paginierung Einträge pro Seite</target>
+         </trans-unit>
+         <trans-unit id="settings.storagePids" resname="settings.storagePids">
+            <source>Storage PIDs</source>
+            <target>Speicher-IDs</target>
+         </trans-unit>
+         <trans-unit id="settings.enableSearch" resname="settings.enableSearch">
+            <source>Enable Search</source>
+            <target>Suche aktivieren</target>
+         </trans-unit>
+
+         <!-- Suche Übersetzungen -->
+         <trans-unit id="tx_mlstonelexicon_search.name" resname="tx_mlstonelexicon_search.name">
+            <source>Search</source>
+            <target>Suche</target>
+         </trans-unit>
+         <trans-unit id="tx_mlstonelexicon_search.description" resname="tx_mlstonelexicon_search.description">
+            <source>Search in the Lexicon</source>
+            <target>Suche im Lexikon</target>
+         </trans-unit>
+
+         <!-- Verschiedene Übersetzungen -->
+         <trans-unit id="wizard.group.lexicon" resname="wizard.group.lexicon">
+            <source>Lexicon</source>
+            <target>Lexikon</target>
+         </trans-unit>
+         <trans-unit id="tt_content.list_type_list" resname="tt_content.list_type_list">
+            <source>list</source>
+            <target>Liste</target>
+         </trans-unit>
+         <trans-unit id="tt_content.list_type_search" resname="tt_content.list_type_search">
+            <source>Search</source>
+            <target>Suche</target>
+         </trans-unit>
+         <trans-unit id="backend_layout.lexicon" resname="backend_layout.lexicon">
+            <source>Lexicon</source>
+            <target>Lexikon</target>
+         </trans-unit>
+
+         <!-- Pagetree -->
+         <trans-unit id="apps-pagetree-mlstonelexicon" resname="apps-pagetree-mlstonelexicon">
+            <source>Lexicon</source>
+            <target>Lexikon</target>
+         </trans-unit>
+         
+         <!-- Allgemeine Übersetzungen -->
+         <trans-unit id="rocktype" resname="rocktype">
+            <source>Rocktype</source>
+            <target>Gesteinsart</target>
+         </trans-unit>
+         <trans-unit id="subgroup" resname="subgroup">
+            <source>Subgroup</source>
+            <target>Untergruppe</target>
+         </trans-unit>
+         <trans-unit id="age" resname="age">
+            <source>Age</source>
+            <target>Gesteinsalter</target>
+         </trans-unit>
+         <trans-unit id="origin" resname="origin">
+            <source>Origin</source>
+            <target>Abbauort</target>
+         </trans-unit>
+         <trans-unit id="color" resname="color">
+            <source>Color</source>
+            <target>Farbe</target>
+         </trans-unit>
+         <trans-unit id="color.1" resname="color.1">
+            <source>Black</source>
+            <target>Schwarz</target>
+         </trans-unit>
+         <trans-unit id="color.2" resname="color.2">
+            <source>Brown</source>
+            <target>Braun</target>
+         </trans-unit>
+         <trans-unit id="color.3" resname="color.3">
+            <source>Red</source>          
+            <target>Rot</target>
+         </trans-unit>
+         <trans-unit id="color.4" resname="color.4">
+            <source>Blue</source>
+            <target>Blau</target>
+         </trans-unit>
+         <trans-unit id="color.5" resname="color.5">
+            <source>Green</source>
+            <target>Grün</target>
+         </trans-unit>
+         <trans-unit id="color.6" resname="color.6">
+            <source>Pink</source>
+            <target>Rosa</target>
+         </trans-unit>
+         <trans-unit id="color.7" resname="color.7">
+            <source>Beige</source>
+            <target>Beige</target>
+         </trans-unit>
+         <trans-unit id="color.8" resname="color.8">
+            <source>Yellow</source>
+            <target>Gelb</target>
+         </trans-unit>
+         <trans-unit id="color.9" resname="color.9">
+            <source>Grey</source>
+            <target>Grau</target>
+         </trans-unit>
+         <trans-unit id="color.10" resname="color.10">
+            <source>White</source>
+            <target>Weiß</target>
+         </trans-unit>
+
+         <trans-unit id="structure" resname="structure">
+            <source>Structure</source>
+            <target>Struktur</target>
+         </trans-unit>
+         <trans-unit id="structure.1" resname="structure.1">
+            <source>Pepper Salt</source>
+            <target>Pfeffer Salz</target>
+         </trans-unit>
+         <trans-unit id="structure.2" resname="structure.2">
+            <source>Plain</source>
+            <target>Unifarben</target>
+         </trans-unit>
+         <trans-unit id="structure.3" resname="structure.3">
+            <source>Clouded</source>
+            <target>Gewolkt</target>
+         </trans-unit>
+         <trans-unit id="structure.4" resname="structure.4">
+            <source>Veined</source>
+            <target>Geadert</target>
+         </trans-unit>
+         <trans-unit id="structure.5" resname="structure.5">
+            <source>Translucent</source>
+            <target>Transluzent</target>
+         </trans-unit>
+         <trans-unit id="structure.6" resname="structure.6">
+            <source>Grainy</source>
+            <target>Körnig</target>
+         </trans-unit>
+         <trans-unit id="structure.7" resname="structure.7">
+            <source>Acicular</source>
+            <target>Nadelig</target>
+         </trans-unit>
+         <trans-unit id="structure.8" resname="structure.8">
+            <source>Banded</source>
+            <target>Gebändert</target>
+         </trans-unit>
+         <trans-unit id="structure.9" resname="structure.9">
+            <source>Glittery</source>
+            <target>Glitzernd</target>
+         </trans-unit>
+         <trans-unit id="structure.10" resname="structure.10">
+            <source>Marbled</source>
+            <target>Marmoriert</target>
+         </trans-unit>
+
+         <!-- Innenbereich trocken Übersetzungen -->
+         <trans-unit id="indoordry" resname="indoordry">
+            <source>Indoor Dry</source>
+            <target>Innenbereich trocken</target>
+         </trans-unit>
+         <trans-unit id="indoordry.1" resname="indoordry.1">
+            <source>Kitchen Countertop</source>
+            <target>Küchenarbeitsplatte</target>
+         </trans-unit>
+         <trans-unit id="indoordry.2" resname="indoordry.2">
+            <source>Wall Paneling</source>
+            <target>Wandverkleidung</target>
+         </trans-unit>
+         <trans-unit id="indoordry.3" resname="indoordry.3">
+            <source>Flooring</source>
+            <target>Bodenbelag</target>
+         </trans-unit>
+         <trans-unit id="indoordry.4" resname="indoordry.4">
+            <source>Stairs</source>
+            <target>Treppe</target>
+         </trans-unit>
+         <trans-unit id="indoordry.5" resname="indoordry.5">
+            <source>Heat Lamp Suitable</source>
+            <target>Wärmelampe geeignet</target>
+         </trans-unit>
+
+         <!-- Innenbereich nass Übersetzungen -->
+         <trans-unit id="indoorwet" resname="indoorwet">
+            <source>Indoor Wet</source>
+            <target>Innenbereich nass</target>
+         </trans-unit>
+         <trans-unit id="indoorwet.1" resname="indoorwet.1">
+            <source>Shower</source>
+            <target>Dusche</target>
+         </trans-unit>
+         <trans-unit id="indoorwet.2" resname="indoorwet.2">
+            <source>Wash Stand</source>
+            <target>Waschtisch</target>
+         </trans-unit>
+         <trans-unit id="indoorwet.3" resname="indoorwet.3">
+            <source>Flooring</source>
+            <target>Bodenbelag</target>
+         </trans-unit>
+
+         <!-- Außenbereich Übersetzungen -->
+         <trans-unit id="outdoor" resname="outdoor">
+            <source>Outdoor</source>
+            <target>Außenbereich</target>
+         </trans-unit>
+         <trans-unit id="outdoor.1" resname="outdoor.1">
+            <source>Exterior Facade</source>
+            <target>Außenfassade</target>
+         </trans-unit>
+         <trans-unit id="outdoor.2" resname="outdoor.2">
+            <source>Terrace</source>
+            <target>Terrasse</target>
+         </trans-unit>
+         <trans-unit id="outdoor.3" resname="outdoor.3">
+            <source>Exterior Staircase</source>
+            <target>Außentreppe</target>
+         </trans-unit>
+
+      </body>
+   </file>
+</xliff>

@@ -1,0 +1,28 @@
+<f:comment><![CDATA[
+    packages/ml_stonelexicon/Resources/Private/Partials/StoneListPartial.html
+    die Steine sind bereits vorgefiltert und die AJAX-Anfragen nur dient dazu, innerhalb dieser vorgefilterten Steine weiter zu filtern
+]]></f:comment>
+
+<div class="card-menu">
+    <f:for each="{stones}" as="stone">
+        <div class="card-menu-item">
+            <div class="card">
+                <div class="card-img-top">
+                    <f:link.page pageUid="{stone.uid}">
+                        <f:cObject typoscriptObjectPath="lib.lexiconThumbnails" data="{uid: stone.uid}" />
+                    </f:link.page>
+                </div>
+                <div class="card-body">
+                    <f:link.page pageUid="{stone.uid}">
+                        <h3 class="card-title">{stone.title}</h3>
+                    </f:link.page>
+                    <f:if condition="{stone.subtitle}">
+                        <h4 class="card-subtitle">{stone.subtitle}</h4>
+                    </f:if>
+                    <p>{stone.rocktype}</p>
+                    <p>{stone.subgroup}</p>
+                </div>
+            </div>
+        </div>
+    </f:for>
+</div>

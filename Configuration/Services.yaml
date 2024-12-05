@@ -1,0 +1,17 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  Simplesigns\MlStonelexicon\Controller\StoneController:
+    public: true
+
+  Simplesigns\MlStonelexicon\Controller\JsonController:
+    public: true
+    
+  Simplesigns\MlStonelexicon\Domain\Repository\PageRepository:
+    public: false
+
+  Simplesigns\MlStonelexicon\Controller\ApiController:
+    public: true
